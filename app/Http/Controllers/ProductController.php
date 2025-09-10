@@ -51,6 +51,7 @@ class ProductController extends Controller
             'price'=>'required|numeric|min:0',
             'description'=>'required|string|max:500',
         ]);
+        
      $product = Product::findOrFail($id);
         $product->name = $request->name;
         $product->price = $request->price;
