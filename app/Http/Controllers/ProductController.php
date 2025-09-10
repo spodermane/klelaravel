@@ -7,16 +7,21 @@ use App\Models\Product;
 use Illuminate\Support\Facades\File;
 class ProductController extends Controller
 {
-    public function index(){
-        $products = Product::all();  
-        return view("products.index",compact("products"));
-    }
+
+
     public function create()
     {
     return view("products.create");
     }
     
     public function store(Request $request){
+
+        $request->validate([
+            'name' =>'required|string|max:255',
+            'price'=>'required|numeric|min:0',
+            'description'=>'required|string|max:500',
+        ]);
+
         $product = new Product;
         $product->name = $request->name;
         $product->price = $request->price;
@@ -40,6 +45,12 @@ class ProductController extends Controller
         return view("products.edit",compact("product"));
     }
    public function update(Request $request, $id){
+
+      $request->validate([
+            'name' =>'required|string|max:255',
+            'price'=>'required|numeric|min:0',
+            'description'=>'required|string|max:500',
+        ]);
      $product = Product::findOrFail($id);
         $product->name = $request->name;
         $product->price = $request->price;
