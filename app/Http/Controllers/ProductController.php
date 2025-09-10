@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 class ProductController extends Controller
 {
     public function __construct(){
-        $this->middleware("auth")->except(['mainPage','showDescription','create','update','edit']);
+        $this->middleware("auth");
     }
 
     public function create()
