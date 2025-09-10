@@ -13,4 +13,6 @@
     @include('products.form', ['formMode' => 'edit'])
 </form>
 
+    <div class="returnbutton container-fluid">
+    <a class="returnmain" href="/mainpage">Geri Dön</a>
 </section>
