@@ -10,7 +10,4 @@
         @include("products.form",["formMode"=>"create"])
     </form>
 </section>
-  <div class="returnbutton container-fluid">
-    <a class="returnmain" href="/mainpage">Geri Dön</a>
-
-
+<a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>

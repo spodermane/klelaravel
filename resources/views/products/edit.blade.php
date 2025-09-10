@@ -12,7 +12,7 @@
     @method('PATCH')
     @include('products.form', ['formMode' => 'edit'])
 </form>
-
-    <div class="returnbutton container-fluid">
-    <a class="returnmain" href="/mainpage">Geri Dön</a>
+ <div class="buttonreturn container-fluid">
+      <a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
+    </div>
 </section>

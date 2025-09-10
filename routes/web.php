@@ -8,7 +8,9 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [ProductController::class, 'mainPage'])->middleware('auth')->name('mainpage');
 
-
+Route::get('/mainpage', function(){
+    return view('mainpage');
+})->name('mainpage');
 
 
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
@@ -23,6 +25,7 @@ Route::get('/dashboard',function(){
 Route::get('/mainpage', function () {
     return view('mainpage');
 })->middleware('auth');
+
 
 Route::get("/products/create",[ProductController::class,"create"])->name("products.create");
 Route::post("/products/create",[ProductController::class,"store"])->name("products.store");

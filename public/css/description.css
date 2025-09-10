@@ -30,22 +30,14 @@ body{
     font-size: 35px;
     padding-top: 50px;
 }
-
-.returnbutton{
-    padding-top: 70px;
+.buttonreturn{
     text-align: center;
 }
-.returnmain{
-    text-decoration: none;
-    font-size: 30px;
-    transition-duration: 0.3s;
+.returnbutton{
+    font-size: 40px;
+    text-align: center
 }
-.returnmain:hover{
-       background-color: lightgrey;
-    color: black;
-    border-radius: 10px;
-    font-size: 35px;
-}
+
 @media(max-width:767px){
     .description-card{
         flex-wrap: wrap;
