@@ -1,0 +1,113 @@
+
+.h-90px{
+    height: 90px;
+}
+
+.navbar{
+    background-color: grey;
+    color:white;
+    
+}
+.navbar-nav{
+    gap: 15px;
+}
+
+.product_add{
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 19px;
+}
+.product_add:hover{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.user_logout{
+    border: 1.5px solid #f7f0f0;
+    background-color: #f7f0f0;
+    border-radius: 10px;
+    font-size: 17px;
+    transition-duration: 0.3s;
+}
+.user_logout:hover{
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    font-size: 19px;
+}
+
+.products{
+    text-align: center;
+    
+}
+.productlist{
+    background-color: grey;
+}
+
+.itemedit{
+    text-decoration: none;
+    display: flex;
+}
+.explanation{
+    text-decoration: none;
+}
+
+.card{
+    width: 100%;
+}
+.card-body{
+    margin: 10px;
+}
+
+.colbody{
+   width: 50%;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.productimage{
+    width: 50%;
+    max-width: 100%;
+    margin-left: 85px;
+    margin-right: auto;
+}
+
+.productdelete{
+    display: flex;
+    justify-content: flex-end;
+}
+.productdeletebutton{
+    border-radius: 15px;
+   border: none;
+   transition-duration: 0.3s;
+}
+.productdeletebutton:hover{
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border: 1.5px solid black;
+}
+
+@media(max-width:767px){
+    .navbar-nav{
+        gap: 0px;
+    }
+    .title{
+        font-size: 15px;
+    }
+    .product_add{
+        font-size: 14px;
+    }
+    .productimage{
+        width: auto;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+   
+
+}
