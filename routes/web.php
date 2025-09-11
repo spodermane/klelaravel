@@ -18,9 +18,7 @@ Route::post('/register', [UserController::class, 'register']);
 
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
-Route::get('/dashboard',function(){
-    return view('dashboard');
-})->middleware("auth");
+
 
 Route::get('/mainpage', function () {
     return view('mainpage');
