@@ -37,7 +37,7 @@ Route::get('/products/{id}/description', [ProductController::class, 'showDescrip
 
 Route::delete('/logout', function () {
     Auth::logout();
-    return redirect('/');
+    return redirect('/login');
 })->name('logout');
 
 Route::get('/mainpage', [ProductController::class, 'mainPage'])->middleware('auth')->name('mainpage');
