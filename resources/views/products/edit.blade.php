@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
+
+<head>
 <title>Edit Product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ asset('css/description.css') }}">
+</head>
 
-
+<body>
 <section>
     
  <form method="POST" action="{{ route('products.update', $product->id) }}" enctype="multipart/form-data">
@@ -16,3 +19,6 @@
       <a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
     </div>
 </section>
+
+
+</body>

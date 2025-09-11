@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
+
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
+</head>
 
-
+<body>
 <div class="titlebar">
         <h1 class="producttitle">{{$formMode === "edit" ? "Edit Product" : "Create Product"}}</h1>
     </div>
@@ -25,9 +28,7 @@
             </div>
         </div>
     </div>
-    
-    
-   
+
     <script>
     function showFile(event){
         var input=event.target;
@@ -39,6 +40,6 @@
         }
         reader.readAsDataURL(input.files[0]);
     }
-
-    
 </script>
+
+</body>

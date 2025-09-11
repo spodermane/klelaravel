@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
+
+<head>
 <title>Kayıt Ol</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+</head>
 
+<body>
 <form method="POST" action="{{ route("register") }}">
     @csrf
     <input type="text" name="name" class="register_name" placeholder="Name">
@@ -22,3 +26,4 @@
 @endif
 
 </form>
+</body>

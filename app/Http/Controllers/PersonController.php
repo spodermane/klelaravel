@@ -8,25 +8,6 @@ use Illuminate\Http\Facades\Validator;
 use Illuminate\Http\JsonResponse;
 class PersonController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $response =[
@@ -37,6 +18,7 @@ class PersonController extends Controller
             "name" => "required|string",
              "email" => "required|string|unique:people,email",
              "password" =>"required|integer|confirmed",
+             "image" => "nullable|image|mimes:jpg,jpeg,png,gif|max:2048"
         ]);
         if($validate->fails()) $response["messages"][] = $validate->errors();
        

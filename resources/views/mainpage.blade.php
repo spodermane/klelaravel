@@ -29,17 +29,12 @@
     @csrf
     @method("DELETE")
     <button type="submit" class="user_logout">Çıkış Yap</button>
-</form>
-                @csrf
             </form>
         @endguest
         </ul>
       </div>
     </div>
   </nav>
-
-
-
   <div class=" container-fluid productlist">
       <h1 class="products">Ürünler</h1>
         <div class="row bodyinf row-cols-md-3">
@@ -60,7 +55,6 @@
                                     Ürünü Kaldır
                                 </button>
                             </form>
- 
                         </div>
                     </div>
                 </div>

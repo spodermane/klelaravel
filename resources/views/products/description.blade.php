@@ -1,8 +1,14 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<section>   
-<title>Ürün Açıklaması</title>
-<link rel="stylesheet" href="{{ asset('css/description.css') }}">
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ asset('css/description.css') }}">
+<title>Ürün Açıklaması</title>
+</head>
+
+<body>
+<section>   
     <h1 class="descriptiontitle">Description {{ $product->name }}</h1>
      <div class="container-fluid ">
       <div class="textbackground">
@@ -32,3 +38,5 @@
       <a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
     </div>
     </div>
+
+</body>
