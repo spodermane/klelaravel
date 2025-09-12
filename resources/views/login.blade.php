@@ -22,4 +22,10 @@
     <div class="register_user">
      <a href="{{ route('register') }}" class="user_register">Kayıt Ol</a>
     </div>
+
+    @if(session('success'))
+    <div class="alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 </body>
