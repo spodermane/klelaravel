@@ -8,16 +8,22 @@
     </head>
 
 <body>
+    
 <form method="POST" action="{{ route("login") }}">
     @csrf
      <input type="email" name="email" class="logemail" placeholder="Email">
-    <input type="password" name="password" class="logpassword" placeholder="Password">
-    <button type="submit" class="logbutton">Giris yap</button>
-    @if ($errors->any())
+       @error('email')
         <div class="alertlog">
-            {{ $errors->first() }}
+            {{ $message }}
         </div>
-    @endif
+    @enderror
+    <input type="password" name="password" class="logpassword" placeholder="Password">
+    @error('password')
+        <div class="alertlog">
+        {{ $message }}
+        </div>
+    @enderror
+    <button type="submit" class="logbutton">Giris yap</button>
 </form>
     <div class="register_user">
      <a href="{{ route('register') }}" class="user_register">Kayıt Ol</a>

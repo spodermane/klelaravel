@@ -11,19 +11,33 @@
 <form method="POST" action="{{ route("register") }}">
     @csrf
     <input type="text" name="name" class="register_name" placeholder="Name">
+     @error('name')
+        <div class="alertlog">
+            {{ $message }}
+        </div>
+    @enderror
     <input type="email" name="email" class="register_email" placeholder="Email">
+     @error('email')
+        <div class="alertlog">
+            {{ $message }}
+        </div>
+    @enderror
     <input type="password" name="password" class="register_password" placeholder="Password">
+     @error('password')
+        <div class="alertlog">
+            {{ $message }}
+        </div>
+    @enderror
      <input type="password" name="password_confirmation" class="register_password_confirmation" placeholder="Password Confirm">
+      @error('password')
+        <div class="alertlog">
+            {{ $message }}
+        </div>
+    @enderror
     <button type="submit" class="registerbutton">Kayıt Ol</button>
 
 
-    @if ($errors->any())
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-@endif
+
     
 </form>
 </body>

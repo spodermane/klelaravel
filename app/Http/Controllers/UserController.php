@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,19 +15,15 @@ class UserController extends Controller
     {
         return view("register");
     }
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        $request->validate([
-            "name"=>"required",
-            "email"=>"required|email|unique:users",
-            "password"=>"required|min:6|confirmed"
-        ]);
+        
         User::create([
             "name"=> $request->name,
             "email"=> $request->email,
             "password"=> Hash::make($request->password),
         ]);
-        return redirect("/login")->with("success","Kayıt başarılıyla olundu! lütfen giriş yapın.");
+        return redirect()->route("login")->with("success","Kayıt başarılıyla olundu! lütfen giriş yapın.");
     }
     
     
@@ -33,16 +31,14 @@ class UserController extends Controller
     {
         return view("login");
     }
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $credentials = $request->only("email","password");
+         $credentials = $request->only("email","password");
 
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended("/mainpage");
-        }
-        return back()->withErrors([
-        'email' => 'E-posta veya şifre hatalı.'
-        ]);
+         if (Auth::attempt($credentials)){
+            return redirect()->intended('/mainpage');
+         }
+         return back()->withErrors(['email' => 'E-posta veya Şifre Hatalı.']);
 
     }
 }

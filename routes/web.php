@@ -8,12 +8,12 @@ use App\Http\Controllers\ProductController;
 
 
 /* Register Route*/
-Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [UserController::class, 'register'])->name('register');
 
 /* Login Route */
-Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
 /* Mainpage Route */
 Route::get('/mainpage', [ProductController::class, 'mainPage'])->middleware('auth')->name('mainpage');
