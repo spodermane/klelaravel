@@ -35,10 +35,8 @@ Route::delete("/products/{product}",[ProductController::class,"destroy"])->name(
 Route::get('/products/{id}/description', [ProductController::class, 'showDescription'])->name('products.description');
 
 /* Logout Route*/
-Route::delete('/logout', function () {
-    Auth::logout();
-    return redirect('/login');
-})->name('logout');
+ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
 
 
 

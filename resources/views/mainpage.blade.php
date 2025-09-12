@@ -26,9 +26,8 @@
             <ul class="navbar-nav ms-auto me-3">
             <a class="product_add" href="products/create">Ürün Ekle</a>
             <form method="POST" action="{{ route('logout') }}">
-    @csrf
-    @method("DELETE")
-    <button type="submit" class="user_logout">Çıkış Yap</button>
+            @csrf
+        <button type="submit" class="user_logout">Çıkış Yap</button>
             </form>
         @endguest
         </ul>

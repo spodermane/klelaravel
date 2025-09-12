@@ -35,3 +35,9 @@ body{
 .alertlog{
     color: red;
 }
+
+.errormessage{
+    text-align: center;
+    color: red;
+    font-size: 28px;
+}

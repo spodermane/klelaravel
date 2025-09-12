@@ -15,6 +15,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
+            session()->flash('error','Verileri Görmek için Giriş Yapmalısınız!');
             return route('login');
         }
     }

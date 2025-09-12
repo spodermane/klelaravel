@@ -8,7 +8,7 @@
     </head>
 
 <body>
-    
+
 <form method="POST" action="{{ route("login") }}">
     @csrf
      <input type="email" name="email" class="logemail" placeholder="Email">
@@ -34,4 +34,11 @@
         {{ session('success') }}
     </div>
 @endif
+
+    @if(session('error'))
+    <div class="errormessage">
+        {{ session('error') }}
+    </div>
+@endif
+
 </body>
