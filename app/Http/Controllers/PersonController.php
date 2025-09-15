@@ -18,7 +18,7 @@ class PersonController extends Controller
             "name" => "required|string",
              "email" => "required|string|unique:people,email",
              "password" =>"required|integer|confirmed",
-             "image" => "nullable|image|mimes:jpg,jpeg,png,gif|max:2048"
+             
         ]);
         if($validate->fails()) $response["messages"][] = $validate->errors();
        
