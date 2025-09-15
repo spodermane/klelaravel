@@ -17,14 +17,19 @@ class UserController extends Controller
     }
     public function register(RegisterRequest $request)
     {
-        
-        User::create([
+        try{
+            User::create([
             "name"=> $request->name,
             "email"=> $request->email,
             "password"=> Hash::make($request->password),
         ]);
         return redirect()->route("login")->with("success","Kayıt başarılıyla olundu! lütfen giriş yapın.");
+        } catch (QueryException $e) {
+        Log::error("User registration error:".$e->getMessage());
+            
+        return back()->withErrors(['general'=>"Kayıt sırasında bir hata oluştu. Lütfen tekrar deneyiniz."]);
     }
+}
     
     
     public function showLoginForm()

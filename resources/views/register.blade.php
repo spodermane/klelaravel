@@ -37,6 +37,11 @@
     <button type="submit" class="registerbutton">Kayıt Ol</button>
 
 
+        @if ($errors->has('general'))
+    <div class="alertlog">
+        {{ $errors->first('general') }}
+    </div>
+@endif
 
     
 </form>

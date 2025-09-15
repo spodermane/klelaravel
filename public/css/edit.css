@@ -75,3 +75,8 @@ body{
         width: 70%;
     }
 }
+
+.alertlog{
+    font-size: 25px;
+    color: red;
+}

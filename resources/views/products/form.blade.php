@@ -16,13 +16,34 @@
                 <div class="card">
                     <label class="productnametext">İsim</label>
                     <input class="productname"type="text" name="name" value="{{ isset($product->name) ? $product->name : "" }}">
+                    @error('name')
+                        <div class="alertlog">
+                        {{ $message }}
+                        </div>
+                        @enderror
                     <label class="productinfotext"> Açıklama</label>
                     <textarea  class="productinfo"name="description"> {{isset($product->description) ? $product->description : ""}}</textarea>
+                    @error('description')
+                        <div class="alertlog">
+                        {{ $message }}
+                        </div>
+                        @enderror
                     <label class="productpricetext"> Fiyat </label>
                     <input class="productprice" type="text" class="input" name="price" value="{{ isset($product->price) ? $product->price : "" }}">
+                    @error('price')
+                        <div class="alertlog">
+                        {{ $message }}
+                        </div>
+                        @enderror
                     <label class="productimgtext">Fotoğraf Ekle</label>
                     <img src ="{{ isset($product->image) ? asset("images/".$product->image) : asset("template/images/no-image.png") }}" alt="" class="productimg" id="file-preview" />
                     <input type="file" name="image" accept="image/*" onchange="showFile(event)">
+                    @error('image')
+                        <div class="alertlog">
+                        {{ $message }}
+                        </div>
+                        @enderror
+
                     <button class="confirmbutton">{{ $formMode === "edit" ? "Update" : "Save" }}</button>
                 </div>
             </div>

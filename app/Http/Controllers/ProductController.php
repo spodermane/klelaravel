@@ -22,6 +22,9 @@ class ProductController extends Controller
             'name' =>'required|string|max:255',
             'price'=>'required|numeric|min:0',
             'description'=>'required|string|max:500',
+        ],[
+            'image.required' => 'Fotoğraf eklemeniz zorunludur.',
+            'image.image' => 'Lütfen geçerli bir resim dosyası yükleyin.',
         ]);
 
         $product = new Product;
@@ -52,8 +55,9 @@ class ProductController extends Controller
             'name' =>'required|string|max:255',
             'price'=>'required|numeric|min:0',
             'description'=>'required|string|max:500',
-            "image" => "nullable|image|mimes:jpg,jpeg,png,gif|max:2048",
+            "image" => "required|image|mimes:jpg,jpeg,png,gif|max:2048",
         ]);
+        
 
      $product = Product::findOrFail($id);
         $product->name = $request->name;
@@ -65,15 +69,15 @@ class ProductController extends Controller
         if(file_exists($image)){
         @unlink($image);
         }
-             $file_name = time().".".request()->image->getClientOriginalExtension();
-            request()->image->move(public_path("images"), $file_name);
+             $file_name = time().".".$request->image->getClientOriginalExtension();
+            $request->image->move(public_path("images"), $file_name);
             $product->image = $file_name; 
         
         }
-      
+            
         $product->save();
 
-        return redirect()->route("mainpage");
+         return redirect()->route("mainpage")->with('success', 'Ürün başarıyla güncellendi!');
     }
    public function destroy($id){
     $product = Product::findOrFail($id);
