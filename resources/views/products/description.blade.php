@@ -9,7 +9,7 @@
 
 <body>
 <section>   
-    <h1 class="descriptiontitle">Description {{ $product->name }}</h1>
+    <h1 class="descriptiontitle">Description "{{ $product->name }}"</h1>
      <div class="container-fluid ">
       <div class="textbackground">
           <div class="row  justify-content-center ">

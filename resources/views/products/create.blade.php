@@ -13,6 +13,7 @@
         @csrf
         @include("products.form",["formMode"=>"create"])
     </form>
+    <a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
 </section>
-<a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
+
 </body>

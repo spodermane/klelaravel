@@ -45,6 +45,8 @@
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->description }}</p>
                             <p><strong>Fiyat:</strong> ₺{{ $product->price }}</p>
+                        </div>
+                            <div class="card-footer">
                             <a class="explanation" href="{{ route('products.description', $product->id) }}">Ürün Açıklaması</a>
                             <a class="itemedit" href="{{ route('products.edit', $product->id) }}">Ürün Güncelle</a>
                             <form method="POST" action="products/{{ $product->id }}" class="productdelete">
@@ -53,8 +55,9 @@
                                 <button class="productdeletebutton" type="submit">
                                     Ürünü Kaldır
                                 </button>
+                                </div>
                             </form>
-                        </div>
+                        
                     </div>
                 </div>
             @endforeach

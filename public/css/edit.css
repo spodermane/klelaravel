@@ -1,5 +1,7 @@
-body{
+html,body{
     background-color: lightgrey;
+    height: 100%;
+    width: 100%;
 }
 
 .producttitle{
@@ -54,14 +56,23 @@ body{
 .confirmbutton{
     margin-top: 25px;
     font-size: 20px;
+    border: none;
+    background-color: white;
+    width: 15%;
+    border-radius: 7px;
+    transition-duration: 0.3s;
+    cursor: pointer;
 }
-.buttonreturn{
-    padding-top: 50px;
-    text-align: center;
+.confirmbutton:hover{
+    background-color: #4CAF50;
 }
+
 .returnbutton{
-    font-size: 40px;
+    display: flex;
+    font-size: 32px;
     text-decoration: none;
+    padding-top: 20px;
+    justify-content: center;
 }
 
 @media(max-width:767px){
@@ -73,6 +84,9 @@ body{
     }
     .productimg{
         width: 70%;
+    }
+    .returnbutton{
+        font-size: 28px;
     }
 }
 
