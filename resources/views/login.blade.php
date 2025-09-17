@@ -3,12 +3,15 @@
     
 <head>
 <title>Giriş Yap</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     </head>
 
 <body>
-
+    
+    <div class="textarea">
+        <div class="loginbody">
+            <p class="logintitle"> Giriş Yap</p>
 <form method="POST" action="{{ route("login") }}">
     @csrf
      <input type="email" name="email" class="logemail" placeholder="Email">
@@ -40,5 +43,6 @@
         {{ session('error') }}
     </div>
 @endif
-
+</div>
+</div>
 </body>

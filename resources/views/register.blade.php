@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <div class="registertext">
+        <div class="registerbody">
+            <p class="bodytext">Kayıt Ol</p>
 <form method="POST" action="{{ route("register") }}">
     @csrf
     <input type="text" name="name" class="register_name" placeholder="Name">
@@ -42,7 +45,7 @@
         {{ $errors->first('general') }}
     </div>
 @endif
-
-    
+</div>
+</div>
 </form>
 </body>
