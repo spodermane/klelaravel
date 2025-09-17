@@ -2,6 +2,8 @@ html,body{
     background-color: lightgrey;
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .producttitle{
@@ -22,36 +24,46 @@ html,body{
 
 
 .productnametext{
-    font-size: 22px;
+    font-family: monospace;
+    width: 25%;
+    font-size: 20px;
     margin-top: 20px;
+    
 }
 .productname{
-    width: 15%;
+    width: 25%;
     border: 1px solid black;
 }
 .productinfotext{
+    font-family: monospace;
+    width: 25%;
     font-size: 20px;
     margin-top: 20px;
 }
 .productinfo{
     resize: none;
     border: 1px solid black;
-    width: 50%;
+    width: 25%;
 }
 .productpricetext{
+    width: 25%;
     font-size: 20px;
     margin-top: 20px;
+    font-family: monospace;
 }
 .productprice{
-    width: 15%;
+    width: 25%;
     border: 1px solid black;
 }
 .productimgtext{
-    font-size: 22px;
+    font-family: monospace;
+    width: 25%;
+    font-size: 20px;
     margin-top: 20px;
 }
 .productimg{
-    width: 25%;
+    padding-top: 10px;
+    width: 20%;
 }
 .confirmbutton{
     margin-top: 25px;
