@@ -6,7 +6,7 @@ use App\Http\Controllers\Veritabani;
 use App\Http\Controllers\ProductController;
 
 
-
+Route::middleware('guest')->group(function () {
 /* Register Route*/
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('/register', [UserController::class, 'register'])->name('register');
@@ -14,7 +14,7 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 /* Login Route */
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [UserController::class, 'login'])->name('login');
-
+});
 /* Mainpage Route */
 Route::get('/mainpage', [ProductController::class, 'mainPage'])->middleware('auth')->name('mainpage');
 
