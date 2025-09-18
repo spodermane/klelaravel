@@ -10,9 +10,10 @@
 <div class="titlebar">
         <h1 class="producttitle">{{$formMode === "edit" ? "Edit Product" : "Create Product"}}</h1>
     </div>
+    
     <div class="container-fluid">
          <div class="row  justify-content-center ">
-            <div class="col-lg-5 d-flex justify-content-center">
+            <div class="col-lg-5 d-flex justify-content-center ">
                 <div class="card">
                     <label class="productnametext">İsim</label>
                     <input class="productname"type="text" name="name" value="{{ isset($product->name) ? $product->name : "" }}">
@@ -43,7 +44,6 @@
                         {{ $message }}
                         </div>
                         @enderror
-
                     <button class="confirmbutton">{{ $formMode === "edit" ? "Update" : "Save" }}</button>
                 </div>
             </div>

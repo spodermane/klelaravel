@@ -5,7 +5,10 @@ html,body{
     margin: 0;
     padding: 0;
 }
-
+.col-lg-5{
+    display: flex;
+    justify-content: center;
+}
 .producttitle{
     text-align: center;
     font-size: 40px;
@@ -17,47 +20,49 @@ html,body{
 }
 .card{
        display: flex;
-    background-color: lightgrey;
+    background-color: white;
     flex-direction: column;
     align-items: center;
+    width: 50%;
 }
 
 
 .productnametext{
     font-family: monospace;
-    width: 25%;
+    width: 50%;
     font-size: 20px;
     margin-top: 20px;
     
+    
 }
 .productname{
-    width: 25%;
+    width: 50%;
     border: 1px solid black;
 }
 .productinfotext{
     font-family: monospace;
-    width: 25%;
+    width: 50%;
     font-size: 20px;
     margin-top: 20px;
 }
 .productinfo{
     resize: none;
     border: 1px solid black;
-    width: 25%;
+    width: 50%;
 }
 .productpricetext{
-    width: 25%;
+    width: 50%;
     font-size: 20px;
     margin-top: 20px;
     font-family: monospace;
 }
 .productprice{
-    width: 25%;
+    width: 50%;
     border: 1px solid black;
 }
 .productimgtext{
     font-family: monospace;
-    width: 25%;
+    width: 50%;
     font-size: 20px;
     margin-top: 20px;
 }
@@ -68,13 +73,16 @@ html,body{
 .confirmbutton{
     margin-top: 25px;
     font-size: 20px;
-    border: none;
-    background-color: white;
-    width: 15%;
+    border: 1px solid #ccc;
+    background-color: rgb(88, 86, 86);
+    color: white;
+    width: 30%;
     border-radius: 7px;
     transition-duration: 0.3s;
     cursor: pointer;
+    font-family: monospace;
 }
+
 .confirmbutton:hover{
     background-color: #4CAF50;
 }
@@ -85,9 +93,14 @@ html,body{
     text-decoration: none;
     padding-top: 20px;
     justify-content: center;
+    cursor: pointer;
+    font-family: monospace;
 }
 
 @media(max-width:767px){
+    .card{
+        width: 90%;
+    }
     .productname{
         width: 50%;
     }

@@ -63,7 +63,7 @@ class ProductController extends Controller
             'name' =>'required|string|max:255',
             'price'=>'required|numeric|min:0',
             'description'=>'required|string|max:500',
-            "image" => "required|image|mimes:jpg,jpeg,png,gif|max:2048",
+            "image" => "nullable|image|mimes:jpg,jpeg,png,gif|max:2048",
         ],[
             "name.required"=> "İsim Alanını doldurmanız zorunludur.",
             "price.required"=> "Fiyat Kısmını doldurmanız zorunludur.",
@@ -86,7 +86,9 @@ class ProductController extends Controller
         $file_name = time().".".$request->image->getClientOriginalExtension();
         $request->image->move(public_path("images"), $file_name);
         $product->image = $file_name; 
-        }
+        } else {
+        $product->image = $product->image;
+        }   
         $product->save();
 
          return redirect()->route("mainpage")->with('success', 'Ürün başarıyla güncellendi!');
