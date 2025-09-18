@@ -30,7 +30,9 @@ class LoginRequest extends FormRequest
     {
         return[
             'email.required' =>'E-posta Gerekli.',
+            'email.email' => 'Lütfen Geçerli Bir E-posta giriniz.',
             'password.required'=> 'Şifre Gerekli',
+            'password.min' => 'Şifre en az 6 karakter olmalıdır.'
         ];
     }
 }
