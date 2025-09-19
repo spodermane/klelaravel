@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Veritabani;
@@ -16,7 +17,7 @@ Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form
 Route::post('/login', [UserController::class, 'login'])->name('login');
 });
 /* Mainpage Route */
-Route::get('/mainpage', [ProductController::class, 'mainPage'])->middleware('auth')->name('mainpage');
+Route::get('/mainpage', [HomeController::class, 'mainPage'])->middleware('auth')->name('mainpage');
 
 /* Product Create Route*/
 Route::get("/products/create",[ProductController::class,"create"])->name("products.create");

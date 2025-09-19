@@ -10,15 +10,13 @@ use Illuminate\Support\Facades\File;
 use Exception;
 class ProductController extends Controller
 {
-    public function __construct(){
-        $this->middleware("auth");
-    }
 
     public function create()
     {
     return view("products.create");
     }
     
+    // Product Create
     public function store(ProductaddRequest $request){
 
         try{ 
@@ -32,18 +30,15 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route("mainpage");
+         return redirect()->route("mainpage")->with('success', 'Ürün başarıyla Eklendi!');
         }
         catch (\Exception $e){
             return redirect()->back()->with("error","Bir Hata Oluştu lütfen tekrar deneyin.".$e->getMessage());
+            
         }
     }
-    public function mainPage()
-    {
-        $products = Product::all();
-        return view("mainpage",compact("products"));
-    }
-    
+
+    // Product Edit
     public function edit($id){
         $product = Product::findOrFail($id);
         return view("products.edit",compact("product"));
@@ -55,11 +50,10 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
-
+        
         if($request->hasFile('image')){
         $image_path = public_path()."/images/";
         $image = $image_path.$product->image;
-
         if(file_exists($image)){
         @unlink($image);
         }
@@ -68,30 +62,29 @@ class ProductController extends Controller
         $request->image->move(public_path("images"), $file_name);
         $product->image = $file_name; 
         } 
-
         $product->save();
-
-         return redirect()->route("mainpage")->with('success', 'Ürün başarıyla güncellendi!');
+    
+        return redirect()->route("mainpage")->with('success', 'Ürün başarıyla güncellendi!');
       }catch(Exception $e){
         return redirect()->back()->with('error',"Bir Hata Oluştu!" .$e->getMessage());
       }
     }
+
+    // Product Delete
    public function destroy($id){
-    
     try{
         $product = Product::findOrFail($id);
     $image_path = public_path() . "/images/";
     $image = $image_path.$product->image;
     if(file_exists($image)){
-        @unlink($image);
+    @unlink($image);
     }
     $product->delete();
     return redirect()->route("mainpage")->with("success","Ürün Başarıyla Silindi.");
     }
     catch(Exception $e){
         return redirect()->back()->with("error","Ürünü Silerken Bir Hata Oluştu.". $e->getMessage());
-    }
-   }
+    }}
    public function showDescription($id){
     $product = Product::findOrFail($id);
     return view('products.description',compact('product'));

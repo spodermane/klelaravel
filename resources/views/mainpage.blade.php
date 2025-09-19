@@ -36,6 +36,18 @@
   </nav>
   <div class=" container-fluid productlist">
       <h1 class="products">Ürünler</h1>
+      
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
         <div class="row bodyinf row-cols-md-3">
             @foreach($products as $product)
                 <div class="col colbody justify-content-center">
@@ -63,7 +75,6 @@
             @endforeach
         </div>
     </div>
-
 
 
 
