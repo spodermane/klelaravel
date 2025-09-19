@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\QueryException;
 use Exception;
 class UserController extends Controller
 {
+    
     public function showRegistrationForm()
     {
         return view("register");

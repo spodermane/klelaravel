@@ -9,7 +9,7 @@
 
 <body>
 <section>   
-    <h1 class="descriptiontitle">Description "{{ $product->name }}"</h1>
+    <h1 class="descriptiontitle">Açıklama '{{ $product->name }}'</h1>
      <div class="container-fluid ">
       <div class="textbackground">
           <div class="row  justify-content-center ">
@@ -17,13 +17,13 @@
               <div class="description-card">
                 <img src="{{asset("images/".$product->image) }}" class="descriptionimage">
                 <div class="description-name">
-                    <strong>Title:</strong>
+                    <strong>Başlık:</strong>
                     {{ $product->name }}
                   <div class="description-info">
-                    <strong>Content:</strong>
+                    <strong>Açıklama:</strong>
                         {{ $product->description }}
                     <div class="description-price">
-                         <strong>Price:</strong>
+                         <strong>Fiyat:</strong>
                         {{ $product->price }}
                     </div>
                   </div>

@@ -34,9 +34,12 @@ class ProductaddRequest extends FormRequest
             "name.required"=> "İsim Alanını doldurmanız zorunludur.",
             "price.required"=> "Fiyat Kısmını doldurmanız zorunludur.",
             "price.numeric"=> "Fiyat Kısmı sadece sayı olmalıdır.",
+            'price.min' => 'Fiyat sıfır veya daha yüksek olmalıdır.',
             "description.required"=> "Açıklama Kısmı Boş bırakılamaz.",
             'image.required' => 'Fotoğraf eklemeniz zorunludur.',
             'image.image' => 'Lütfen geçerli bir resim dosyası yükleyin.',
+            'image.max' => 'Resim Dosyası en fazla 2 MB olabilir.',
+            'image.mimes' => 'Resim sadece .jpg, .jpeg, .png veya .gif formatlarında olmak zorundadır.'
         ];
     }
 }

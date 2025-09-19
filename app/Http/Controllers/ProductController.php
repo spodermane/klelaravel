@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\File;
 use Exception;
+use Illuminate\Database\QueryException;
 class ProductController extends Controller
 {
-
     public function create()
     {
     return view("products.create");
@@ -50,7 +50,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
-        
+
         if($request->hasFile('image')){
         $image_path = public_path()."/images/";
         $image = $image_path.$product->image;
@@ -66,7 +66,7 @@ class ProductController extends Controller
     
         return redirect()->route("mainpage")->with('success', 'Ürün başarıyla güncellendi!');
       }catch(Exception $e){
-        return redirect()->back()->with('error',"Bir Hata Oluştu!" .$e->getMessage());
+        return redirect()->back()->with("error","Bir Hata Oluştu!" .$e->getMessage());
       }
     }
 

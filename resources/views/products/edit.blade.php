@@ -19,6 +19,10 @@
       <a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
     </div>
 </section>
-
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 
 </body>

@@ -16,8 +16,10 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 });
-/* Mainpage Route */
-Route::get('/mainpage', [HomeController::class, 'mainPage'])->middleware('auth')->name('mainpage');
+Route::middleware('auth')->group( function() {
+
+    /* Mainpage Route */
+Route::get('/mainpage', [HomeController::class, 'mainPage'])->name('mainpage');
 
 /* Product Create Route*/
 Route::get("/products/create",[ProductController::class,"create"])->name("products.create");
@@ -37,6 +39,8 @@ Route::get('/products/{id}/description', [ProductController::class, 'showDescrip
 
 /* Logout Route*/
  Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+});
+
 
 
 
