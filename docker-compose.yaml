@@ -5,7 +5,11 @@ services:
       dockerfile: Dockerfile
     container_name: mybackend
     ports:
+<<<<<<< HEAD
       - "8000:8000"
+=======
+      - 8000:8000
+>>>>>>> 599e0cd5eac25af332ccb60300f03951d96e4308
     volumes:
       - ./:/app
     depends_on:
@@ -30,11 +34,17 @@ services:
     image: mysql:8.0
     container_name: mysql
     ports:
+<<<<<<< HEAD
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 12345
       MYSQL_DATABASE: laravel
       MYSQL_PASSWORD: 12345
+=======
+      - "3306:3306"
+    env_file:
+      - .env
+>>>>>>> 599e0cd5eac25af332ccb60300f03951d96e4308
     volumes:
       - mysql-data:/var/lib/mysql
     networks:

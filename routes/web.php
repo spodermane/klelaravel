@@ -41,9 +41,12 @@ Route::get('/products/{id}/description', [ProductController::class, 'showDescrip
  Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return redirect()->route('login.form');
 });
+=======
+>>>>>>> 599e0cd5eac25af332ccb60300f03951d96e4308
 
 
 
