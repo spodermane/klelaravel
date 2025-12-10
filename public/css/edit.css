@@ -1,0 +1,121 @@
+html,body{
+    background-color: lightgrey;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.col-lg-5{
+    display: flex;
+    justify-content: center;
+}
+.producttitle{
+    text-align: center;
+    font-size: 40px;
+}
+.productimg{
+    width: 25%;
+    max-width: 100%;
+    align-items: center;
+}
+.card{
+       display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+
+.productnametext{
+    font-family: monospace;
+    width: 50%;
+    font-size: 20px;
+    margin-top: 20px;
+    
+    
+}
+.productname{
+    width: 50%;
+    border: 1px solid black;
+}
+.productinfotext{
+    font-family: monospace;
+    width: 50%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.productinfo{
+    resize: none;
+    border: 1px solid black;
+    width: 50%;
+}
+.productpricetext{
+    width: 50%;
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: monospace;
+}
+.productprice{
+    width: 50%;
+    border: 1px solid black;
+}
+.productimgtext{
+    font-family: monospace;
+    width: 50%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.productimg{
+    padding-top: 10px;
+    width: 20%;
+}
+.confirmbutton{
+    margin-top: 25px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    background-color: rgb(88, 86, 86);
+    color: white;
+    width: 30%;
+    border-radius: 7px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.confirmbutton:hover{
+    background-color: #4CAF50;
+}
+
+.returnbutton{
+    display: flex;
+    font-size: 32px;
+    text-decoration: none;
+    padding-top: 20px;
+    justify-content: center;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+@media(max-width:767px){
+    .card{
+        width: 90%;
+    }
+    .productname{
+        width: 50%;
+    }
+    .productprice{
+        width: 50%;
+    }
+    .productimg{
+        width: 70%;
+    }
+    .returnbutton{
+        font-size: 28px;
+    }
+}
+
+.alertlog{
+    font-size: 25px;
+    color: red;
+}

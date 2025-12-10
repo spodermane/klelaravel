@@ -1,0 +1,48 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mybackend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    depends_on:
+      - mysql
+    env_file:
+      - .env
+    networks:
+      - application
+    command: >
+      sh -c "
+      until mysqladmin ping -h\"${DB_HOST}\" -u ${DB_USERNAME} -p${DB_PASSWORD} --silent; do
+      echo 'Waiting for MySQL to be ready...';
+      sleep 2;
+      done;
+      echo '✅ MySQL is ready!';
+      composer install;
+      php artisan migrate;
+      php artisan serve --host=0.0.0.0 --port=8000
+      "
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: laravel
+      MYSQL_PASSWORD: 12345
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - application
+
+networks:
+  application:
+    driver: bridge
+
+volumes:
+  mysql-data:

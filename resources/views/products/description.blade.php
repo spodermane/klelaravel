@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ asset('css/description.css') }}">
+<title>Ürün Açıklaması</title>
+</head>
+
+<body>
+<section>   
+    <h1 class="descriptiontitle">Açıklama '{{ $product->name }}'</h1>
+     <div class="container-fluid ">
+      <div class="textbackground">
+          <div class="row  justify-content-center ">
+            <div class="col-lg-5 d-flex justify-content-center">
+              <div class="description-card">
+                <img src="{{asset("images/".$product->image) }}" class="descriptionimage">
+                <div class="description-name">
+                    <strong>Başlık:</strong>
+                    {{ $product->name }}
+                  <div class="description-info">
+                    <strong>Açıklama:</strong>
+                        {{ $product->description }}
+                    <div class="description-price">
+                         <strong>Fiyat:</strong>
+                        {{ $product->price }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="buttonreturn container-fluid">
+      <a href="{{ route('mainpage') }}" class="returnbutton">Geri Dön</a>
+    </div>
+    </div>
+
+</body>

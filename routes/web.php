@@ -1,0 +1,50 @@
+<?php
+
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Veritabani;
+use App\Http\Controllers\ProductController;
+
+
+Route::middleware('guest')->group(function () {
+/* Register Route*/
+Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [UserController::class, 'register'])->name('register');
+
+/* Login Route */
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [UserController::class, 'login'])->name('login');
+});
+Route::middleware('auth')->group( function() {
+
+    /* Mainpage Route */
+Route::get('/mainpage', [HomeController::class, 'mainPage'])->name('mainpage');
+
+/* Product Create Route*/
+Route::get("/products/create",[ProductController::class,"create"])->name("products.create");
+Route::post("/products/create",[ProductController::class,"store"])->name("products.store");
+
+/* Product Edit Route*/
+Route::get("/products/{product}/edit",[ProductController::class,"edit"])->name("products.edit");
+
+/* Product Update Route*/
+Route::patch("/products/{product}",[ProductController::class,"update"])->name("products.update");
+
+/* Product Destroy Route*/
+Route::delete("/products/{product}",[ProductController::class,"destroy"])->name("products.destroy");
+
+/* Product Description Route */
+Route::get('/products/{id}/description', [ProductController::class, 'showDescription'])->name('products.description');
+
+/* Logout Route*/
+ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+});
+
+Route::get('/', function () {
+    return redirect()->route('login.form');
+});
+
+
+
+

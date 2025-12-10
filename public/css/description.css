@@ -1,0 +1,54 @@
+body{
+    background-color: lightgrey;
+}
+.descriptiontitle{
+    text-align: center;
+    font-size: 45px;
+    padding-top: 20px;
+}
+.descriptionimage{
+    width: 30%;
+    max-width: 100%;
+}
+
+.description-card{
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    background-color: white;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.description-name{
+    padding-left: 10%;
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+.description-info{
+    font-size: 35px;
+    padding-top: 40px;
+}
+.description-price{
+    font-size: 35px;
+    padding-top: 50px;
+}
+.buttonreturn{
+    text-align: center;
+}
+.returnbutton{
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+@media(max-width:767px){
+    .description-card{
+        flex-wrap: wrap;
+    }
+    .descriptionimage{
+        width: 90%;
+        padding-bottom: 50px;
+    }
+}
